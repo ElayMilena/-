@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КГАУ ДО СШОР "Ерофей"</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- ===== ГЛАВНАЯ ===== -->
+        <div id="main-screen" class="screen active">
+            <img src="images/erofey.jpg" alt="КГАУ ДО СШОР Ерофей" class="hero-image">
+
+            <h1>КГАУ ДО СШОР «Ерофей»</h1>
+
+            <!-- ИНФОРМАЦИЯ ОБ УЧРЕЖДЕНИИ -->
+            <p class="welcome-text">
+                Мы рады видеть вас в нашем боте!<br><br>
+                КГАУ ДО СШОР «Ерофей» — это спортивная школа олимпийского резерва,
+                где мы воспитываем будущих чемпионов и прививаем любовь к спорту.
+                Здесь вы можете узнать о наших мероприятиях, связаться с нами
+                и ознакомиться с актуальными вакансиями.
+            </p>
+
+            <div class="menu">
+                <button class="menu-btn" onclick="showScreen('events-screen')">Мероприятия</button>
+                <button class="menu-btn" onclick="showScreen('contacts-screen')">Контакты</button>
+                <button class="menu-btn" onclick="showScreen('vacancies-screen')">Вакансии</button>
+            </div>
+        </div>
+
+        <!-- ===== МЕРОПРИЯТИЯ ===== -->
+        <div id="events-screen" class="screen">
+            <button class="back-btn" onclick="showScreen('main-screen')">← Назад</button>
+            <h2>Мероприятия</h2>
+
+            <div class="menu">
+                <button class="menu-btn" onclick="showScreen('concerts-screen')">🎵 Концерты</button>
+                <button class="menu-btn" onclick="showScreen('hockey-screen')">🏒 Хоккей</button>
+                <button class="menu-btn" onclick="showScreen('rink-screen')">⛸ Каток</button>
+            </div>
+        </div>
+
+        <!-- ===== КОНЦЕРТЫ ===== -->
+        <div id="concerts-screen" class="screen">
+            <button class="back-btn" onclick="showScreen('events-screen')">← Назад</button>
+            <h2>Концерты</h2>
+            <!-- ИНФОРМАЦИЯ О КОНЦЕРТАХ -->
+            <p class="info-text">
+                Информация о концертах<br>
+                даты, время
+            </p>
+        </div>
+
+        <!-- ===== ХОККЕЙ ===== -->
+        <div id="hockey-screen" class="screen">
+            <button class="back-btn" onclick="showScreen('events-screen')">← Назад</button>
+            <h2>Хоккей</h2>
+            <!-- ИНФОРМАЦИЯ О ХОККЕЙНЫХ МАТЧАХ -->
+            <p class="info-text">
+                Информация о хоккейных матчах <br>
+                расписание игр
+            </p>
+        </div>
+
+        <!-- ===== КАТОК ===== -->
+        <div id="rink-screen" class="screen">
+            <button class="back-btn" onclick="showScreen('events-screen')">← Назад</button>
+            <h2>Каток</h2>
+            <!-- ИНФОРМАЦИЯ О КАТКЕ -->
+            <p class="info-text">
+                Информация о массовых катаниях <br>
+                СТОИМОСТЬ, ПРОКАТ 
+            </p>
+        </div>
+
+        <!-- ===== КОНТАКТЫ ===== -->
+        <div id="contacts-screen" class="screen">
+            <button class="back-btn" onclick="showScreen('main-screen')">← Назад</button>
+            <h2>Контакты</h2>
+            <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ -->
+            <p class="info-text">
+                Адрес: 680012, г. Хабаровск, ул. Морозова Павла Леонтьевича, д. 83<br>
+                Телефон администратора: +7 (962) 501-14-14<br>
+                Коммерческий отдел: komerotdel@erofey-arena.ru<br>
+                Приемная: bandycenter@erofey-arena.ru<br>
+                Режим работы: с 09:00 до 18:00, перерыв с 13:00 до 14:00<br>
+                Сайт: https://www.erofey-arena.ru/
+            </p>
+        </div>
+
+        <!-- ===== ВАКАНСИИ ===== -->
+        <div id="vacancies-screen" class="screen">
+            <button class="back-btn" onclick="showScreen('main-screen')">← Назад</button>
+            <h2>Вакансии</h2>
+            <!-- ИНФОРМАЦИЯ О ВАКАНСИЯХ -->
+            <p class="info-text">
+                Актуальные вакансии:<br><br>
+                1. <br>
+                2. <br>
+                3. <br><br>
+                Хотите узнать условия или записаться на собеседование?
+                Свяжитесь с нами: 45-67-92
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
