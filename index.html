@@ -14,7 +14,6 @@
 
             <h1>КГАУ ДО СШОР «Ерофей»</h1>
 
-            <!-- ИНФОРМАЦИЯ ОБ УЧРЕЖДЕНИИ -->
             <p class="welcome-text">
                 Мы рады видеть вас в нашем боте!<br><br>
                 КГАУ ДО СШОР «Ерофей» — это спортивная школа олимпийского резерва,
@@ -46,7 +45,6 @@
         <div id="concerts-screen" class="screen">
             <button class="back-btn" onclick="showScreen('events-screen')">← Назад</button>
             <h2>Концерты</h2>
-            <!-- ИНФОРМАЦИЯ О КОНЦЕРТАХ -->
             <p class="info-text">
                 Информация о концертах<br>
                 даты, время
@@ -57,7 +55,6 @@
         <div id="hockey-screen" class="screen">
             <button class="back-btn" onclick="showScreen('events-screen')">← Назад</button>
             <h2>Хоккей</h2>
-            <!-- ИНФОРМАЦИЯ О ХОККЕЙНЫХ МАТЧАХ -->
             <p class="info-text">
                 Информация о хоккейных матчах <br>
                 расписание игр
@@ -68,7 +65,6 @@
         <div id="rink-screen" class="screen">
             <button class="back-btn" onclick="showScreen('events-screen')">← Назад</button>
             <h2>Каток</h2>
-            <!-- ИНФОРМАЦИЯ О КАТКЕ -->
             <p class="info-text">
                 Информация о массовых катаниях <br>
                 СТОИМОСТЬ, ПРОКАТ 
@@ -79,7 +75,6 @@
         <div id="contacts-screen" class="screen">
             <button class="back-btn" onclick="showScreen('main-screen')">← Назад</button>
             <h2>Контакты</h2>
-            <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ -->
             <p class="info-text">
                 Адрес: 680012, г. Хабаровск, ул. Морозова Павла Леонтьевича, д. 83<br>
                 Телефон администратора: +7 (962) 501-14-14<br>
@@ -94,7 +89,6 @@
         <div id="vacancies-screen" class="screen">
             <button class="back-btn" onclick="showScreen('main-screen')">← Назад</button>
             <h2>Вакансии</h2>
-            <!-- ИНФОРМАЦИЯ О ВАКАНСИЯХ -->
             <p class="info-text">
                 Актуальные вакансии:<br><br>
                 1. <br>
@@ -103,6 +97,30 @@
                 Хотите узнать условия или записаться на собеседование?
                 Свяжитесь с нами: 45-67-92
             </p>
+        </div>
+
+        <!-- ===== РОБОТ ===== -->
+        <div class="robot" id="robot" role="button" tabindex="0" aria-label="Поздороваться с роботом">
+            <div class="robot__peek">
+                <div class="robot__body">
+                    <div class="robot__head">
+                        <div class="robot__eye"></div>
+                        <div class="robot__eye"></div>
+                        <div class="robot__mouth"></div>
+                    </div>
+
+                    <div class="robot__torso">
+                        
+                        <img src="images/logo.png"
+                             alt="Логотип"
+                             class="robot__logo">
+
+                    </div>
+
+                    <div class="robot__arm robot__arm--left"></div>
+                    <div class="robot__arm robot__arm--right"></div>
+                </div>
+            </div>
         </div>
     </div>
 
