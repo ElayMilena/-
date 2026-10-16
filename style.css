@@ -271,9 +271,9 @@ h2 {
 
 /* ---- Анимации ---- */
 
-/* Машет правой рукой (одной) */
-.robot.is-waving .robot__arm--right {
-    animation: robotWaveRight 0.75s ease-in-out infinite;
+/* Машет ЛЕВОЙ рукой (одной) */
+.robot.is-waving .robot__arm--left {
+    animation: robotWaveLeft 0.75s ease-in-out infinite;
 }
 
 /* Машет ДВУМЯ руками */
