@@ -20,7 +20,6 @@
 
             <h1>КГАУ ДО СШОР «Ерофей»</h1>
 
-            <!-- ТЕКСТ: приветствие -->
             <p class="welcome-text">
                 Мы рады видеть вас в нашем боте!<br><br>
                 КГАУ ДО СШОР «Ерофей» — это спортивная школа олимпийского резерва,
@@ -29,7 +28,6 @@
                 и ознакомиться с актуальными вакансиями.
             </p>
 
-            <!-- ГЛАВНОЕ МЕНЮ -->
             <div class="menu">
                 <button class="menu-btn" data-target="objects-screen">Объекты</button>
                 <button class="menu-btn" data-target="events-screen">Мероприятия</button>
@@ -37,9 +35,7 @@
                 <button class="menu-btn" data-target="vacancies-screen">Вакансии</button>
             </div>
 
-            <!-- =================================================
-                 РОБОТ (только на главном экране)
-                 ================================================= -->
+            <!-- РОБОТ (только на главном экране) -->
             <div class="robot" id="robot" role="button" tabindex="0" aria-label="Поздороваться с роботом">
                 <div class="robot__peek">
                     <div class="robot__body">
@@ -60,7 +56,7 @@
         </div>
 
         <!-- =====================================================
-             ЭКРАН «ОБЪЕКТЫ» — вертикальный скролл
+             ЭКРАН «ОБЪЕКТЫ»
              ===================================================== -->
         <div id="objects-screen" class="screen">
             <button class="back-btn" data-target="main-screen">← Назад</button>
@@ -68,12 +64,9 @@
 
             <div class="objects-scroll">
 
-                <!-- =================================================
-                     БЛОК 1: Арена «Ерофей»
-                     ================================================= -->
+                <!-- БЛОК 1: Арена «Ерофей» -->
                 <div class="object-block">
                     <div class="object-card">
-                        <!-- ФОТО: замените на фото Арены «Ерофей» -->
                         <img src="images/arena.jpg" alt="Арена Ерофей" class="object-img">
                         <div class="object-text">
                             <h3>Арена «Ерофей»</h3>
@@ -118,6 +111,18 @@
 
                         <div class="services-content" id="tab-tabletennis">
                             <h4>Настольный теннис</h4>
+                            <p class="services-text">Свободное посещение. График:</p>
+                            <ul class="services-list">
+                                <li>понедельник – пятница: <strong>11:00–18:00</strong>;</li>
+                                <li>суббота, воскресенье: <strong>15:00–17:00</strong>.</li>
+                            </ul>
+                            <p class="services-text">Стоимость услуги:</p>
+                            <ul class="services-list">
+                                <li>1 час для 2 человек / 1 стол — <strong>250 руб.</strong>;</li>
+                                <li>1 час для 3 человек / 1 стол — <strong>300 руб.</strong>;</li>
+                                <li>1 час для 4 человек / 1 стол — <strong>350 руб.</strong>;</li>
+                                <li>с понедельника по пятницу с 13:00 до 14:00 — <strong>бесплатный час</strong>.</li>
+                            </ul>
                             <p class="services-text">
                                 Клуб настольного тенниса «Ерофей» приглашает взрослых и детей
                                 научиться играть в настольный теннис.
@@ -131,18 +136,7 @@
                             <p class="services-contact">
                                 Для записи в секцию звоните: <strong>8-909-879-72-00</strong>
                             </p>
-                            <p class="services-text">Кроме того, существует свободное посещение. График:</p>
-                            <ul class="services-list">
-                                <li>понедельник – пятница: <strong>11:00–17:00</strong>;</li>
-                                <li>суббота, воскресенье: <strong>15:00–17:00</strong>.</li>
-                            </ul>
-                            <p class="services-text">Стоимость услуги:</p>
-                            <ul class="services-list">
-                                <li>1 час для 2 человек / 1 стол — <strong>250 руб.</strong>;</li>
-                                <li>1 час для 3 человек / 1 стол — <strong>300 руб.</strong>;</li>
-                                <li>1 час для 4 человек / 1 стол — <strong>350 руб.</strong>;</li>
-                                <li>с понедельника по пятницу с 13:00 до 14:00 — <strong>бесплатный час</strong>.</li>
-                            </ul>
+                            
                         </div>
 
                         <div class="services-content" id="tab-rink">
@@ -162,19 +156,6 @@
                                 <li>заточка коньков — <strong>250 руб.</strong> (только для посетителей массового катания);</li>
                                 <li>прокат коньков — <strong>200 руб.</strong></li>
                             </ul>
-                            <p class="services-text">
-                                Возврат билетов осуществляется в соответствии с Федеральным законом
-                                от 18.07.2019 №193-ФЗ. В случае отказа посетителя от посещения
-                                зрелищного мероприятия по причинам, не связанным с
-                                отменой/заменой/переносом мероприятия, при возврате билета,
-                                абонемента или экскурсионной путёвки:
-                            </p>
-                            <ul class="services-list">
-                                <li>более 10 дней — <strong>полная стоимость</strong> билетов;</li>
-                                <li>от 6 до 10 дней включительно — <strong>50%</strong> стоимости;</li>
-                                <li>от 4 до 5 дней включительно — <strong>30%</strong> стоимости;</li>
-                                <li>72 часа и менее до начала события — стоимость <strong>не возвращается</strong>.</li>
-                            </ul>
                         </div>
 
                         <div class="services-content" id="tab-rent">
@@ -184,16 +165,11 @@
                                 спортивных, культурно-массовых и деловых мероприятий любого масштаба
                                 в Хабаровске. Площадь Арены — <strong>40,6 тыс. кв. м.</strong>
                             </p>
-                            <p class="services-text">
-                                Масштаб вашего мероприятия может быть совершенно разным: от небольших
-                                акций, рассчитанных на небольшое количество участников, до многотысячных
-                                концертов, фестивалей, международных и знаковых событий.
-                            </p>
                             <ul class="services-list">
-                                <li>ледовая площадка для тренировок, игр, соревнований и корпоративных катков — <strong>25 000 руб./час</strong>;</li>
-                                <li>арена для концертных (торжественных) мероприятий, крупных семинаров, спортивно-зрелищных событий — <strong>720 000 руб./день</strong>;</li>
+                                <li>ледовая площадка — <strong>25 000 руб./час</strong>;</li>
+                                <li>арена для концертных мероприятий — <strong>720 000 руб./день</strong>;</li>
                                 <li>конференц-зал на 60 человек — <strong>2 306 руб./час</strong>;</li>
-                                <li>помещения для организации мероприятий — <strong>22 руб./кв. м в час</strong>.</li>
+                                <li>помещения для мероприятий — <strong>22 руб./кв. м в час</strong>.</li>
                             </ul>
                             <p class="services-contact">Подробная информация по телефону: <strong>61-14-14</strong></p>
                         </div>
@@ -206,19 +182,15 @@
                             <ul class="services-list">
                                 <li>трибуны вмещают до <strong>10 000 зрителей</strong>;</li>
                                 <li>арена расположена в <strong>10 минутах езды</strong> от центральной части города;</li>
-                                <li>автопарковка на <strong>950 машин</strong> — в непосредственной близости от стадиона.</li>
                             </ul>
                             <p class="services-contact">Подробная информация по телефону: <strong>61-14-14</strong></p>
                         </div>
                     </div>
                 </div>
 
-                <!-- =================================================
-                     БЛОК 2: Фиджитал-центр
-                     ================================================= -->
+                <!-- БЛОК 2: Фиджитал-центр -->
                 <div class="object-block">
                     <div class="object-card object-card--reverse">
-                        <!-- ФОТО: замените на фото Фиджитал-центра -->
                         <img src="images/fidjital.jpg" alt="Фиджитал-центр" class="object-img">
                         <div class="object-text">
                             <h3>Фиджитал-центр</h3>
@@ -246,12 +218,9 @@
                     </div>
                 </div>
 
-                <!-- =================================================
-                     БЛОК 3: Модульный спортивный зал
-                     ================================================= -->
+                <!-- БЛОК 3: Модульный спортивный зал -->
                 <div class="object-block">
                     <div class="object-card">
-                        <!-- ФОТО: замените на фото Модульного зала -->
                         <img src="images/modul.jpg" alt="Модульный спортивный зал" class="object-img">
                         <div class="object-text">
                             <h3>Модульный спортивный зал</h3>
@@ -284,39 +253,170 @@
 
             <div class="accordion">
 
+                <!-- ===== КОНЦЕРТЫ ===== -->
                 <div class="acc-item">
                     <button class="menu-btn acc-toggle" data-panel="panel-concerts">
                         🎵 Концерты
                     </button>
                     <div class="acc-panel" id="panel-concerts">
-                        <p class="info-text">
-                            Информация о концертах: даты, время, артисты.<br>
-                            Следите за афишей на официальном сайте.
-                        </p>
+                        <div class="acc-panel-inner">
+
+                            <h4>Ближайшие концерты</h4>
+                            <table class="event-table">
+                                <thead>
+                                    <tr>
+                                        <th>Исполнитель</th>
+                                        <th>Дата</th>
+                                        <th>Время</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Анна Асти</td>
+                                        <td>15.11.2026</td>
+                                        <td>20:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p class="event-note">
+                                Подробную информацию по концерту можно узнать
+                                на официальном сайте исполнителя.
+                            </p>
+
+                            <h4 class="gallery-title">Фотогалерея прошедших концертов</h4>
+
+                            <!-- ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ: листается вбок -->
+                            <div class="event-gallery" data-gallery>
+                                <button class="gallery-arrow gallery-arrow--prev" type="button" aria-label="Назад">‹</button>
+                                <div class="event-gallery-track">
+                                    <!-- ФОТО: замените на фото с прошедших концертов -->
+                                    <img src="images/concert-1.jpg" alt="Концерт 1" class="event-gallery-img">
+                                    <img src="images/concert-2.jpg" alt="Концерт 2" class="event-gallery-img">
+                                    <img src="images/concert-3.jpg" alt="Концерт 3" class="event-gallery-img">
+                                    <img src="images/concert-4.jpg" alt="Концерт 4" class="event-gallery-img">
+                                </div>
+                                <button class="gallery-arrow gallery-arrow--next" type="button" aria-label="Вперёд">›</button>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
+                <!-- ===== КАТОК ===== -->
                 <div class="acc-item">
                     <button class="menu-btn acc-toggle" data-panel="panel-rink">
                         ⛸ Каток
                     </button>
                     <div class="acc-panel" id="panel-rink">
-                        <p class="info-text">
-                            Массовые катания: расписание сеансов, стоимость билета,
-                            прокат коньков и правила посещения.
-                        </p>
+                        <div class="acc-panel-inner">
+
+                            <h4>Расписание сеансов</h4>
+                            <table class="event-table">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Время</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>31 октября 2026</td><td>19:00-20:00</td></tr>
+                                    <tr><td>1 ноября 2026</td><td>18:00-19:00</td></tr>
+                                </tbody>
+                            </table>
+
+                            <p class="event-note">
+                                Билеты можно приобрести в кассе и на официальном сайте
+                                Арены «Ерофей»:
+                                <a href="https://erofey-arena.ru/" target="_blank" rel="noopener">erofey-arena.ru</a>
+                            </p>
+
+                            <h4 class="gallery-title">Фотогалерея прошедших сеансов</h4>
+
+                            <!-- ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ: листается вбок -->
+                            <div class="event-gallery" data-gallery>
+                                <button class="gallery-arrow gallery-arrow--prev" type="button" aria-label="Назад">‹</button>
+                                <div class="event-gallery-track">
+                                    <!-- ФОТО: замените на фото с прошедших сеансов катка -->
+                                    <img src="images/katok-1.jpg" alt="Каток 1" class="event-gallery-img">
+                                    <img src="images/katok-2.jpg" alt="Каток 2" class="event-gallery-img">
+                                    <img src="images/katok-3.jpg" alt="Каток 3" class="event-gallery-img">
+                                    <img src="images/katok-4.jpg" alt="Каток 4" class="event-gallery-img">
+                                    <img src="images/katok-5.jpg" alt="Каток 4" class="event-gallery-img">
+                                    <img src="images/katok-6.jpg" alt="Каток 4" class="event-gallery-img">
+                                </div>
+                                <button class="gallery-arrow gallery-arrow--next" type="button" aria-label="Вперёд">›</button>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
+                <!-- ===== ХОККЕЙ ===== -->
                 <div class="acc-item">
                     <button class="menu-btn acc-toggle" data-panel="panel-hockey">
                         🏒 Хоккей
                     </button>
                     <div class="acc-panel" id="panel-hockey">
-                        <p class="info-text">
-                            Хоккейные матчи: расписание игр, состав команд,
-                            билеты и трансляции.
-                        </p>
+                        <div class="acc-panel-inner">
+
+                            <h4>Расписание матчей</h4>
+                            <table class="event-table">
+                                <thead>
+                                    <tr>
+                                        <th>Матч</th>
+                                        <th>Дата</th>
+                                        <th>Время</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>СКА-Нефтяник — Родина</td>
+                                        <td>07.11.2026</td>
+                                        <td>13:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>СКА-Нефтяник — СКА-Ур.Трубник</td>
+                                        <td>11.11.2026</td>
+                                        <td>19:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>СКА-Нефтяник — Волга</td>
+                                        <td>14.11.2026</td>
+                                        <td>13:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>СКА-Нефтяник — АК Барс-Ракета</td>
+                                        <td>18.11.2026</td>
+                                        <td>19:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p class="event-note">
+                                Билеты можно приобрести в кассе и на официальном сайте
+                                Арены «Ерофей»:
+                                <a href="https://erofey-arena.ru/" target="_blank" rel="noopener">erofey-arena.ru</a>.<br>
+                                Подробную информацию о матчах можно узнать на сайте
+                                <a href="https://skabandy.ru/?ref=xranks" target="_blank" rel="noopener">skabandy.ru</a>.
+                            </p>
+
+                            <h4 class="gallery-title">Фотогалерея прошедших матчей</h4>
+
+                            <!-- ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ: листается вбок -->
+                            <div class="event-gallery" data-gallery>
+                                <button class="gallery-arrow gallery-arrow--prev" type="button" aria-label="Назад">‹</button>
+                                <div class="event-gallery-track">
+                                    <!-- ФОТО: замените на фото с прошедших матчей -->
+                                    <img src="images/hockey-1.jpg" alt="Матч 1" class="event-gallery-img">
+                                    <img src="images/hockey-2.jpg" alt="Матч 2" class="event-gallery-img">
+                                    <img src="images/hockey-3.jpg" alt="Матч 3" class="event-gallery-img">
+                                    <img src="images/hockey-4.jpg" alt="Матч 4" class="event-gallery-img">
+                                </div>
+                                <button class="gallery-arrow gallery-arrow--next" type="button" aria-label="Вперёд">›</button>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
@@ -324,38 +424,11 @@
         </div>
 
         <!-- =====================================================
-             ЭКРАН «СПОРТИВНАЯ ШКОЛА» — скролл к разделам
+             ЭКРАН «СПОРТИВНАЯ ШКОЛА»
              ===================================================== -->
         <div id="school-screen" class="screen">
             <button class="back-btn" data-target="main-screen">← Назад</button>
             <h2>Спортивная школа</h2>
-
-           <!-- <div class="menu">
-                <a href="#school-management" class="menu-btn anchor-btn">Руководство</a>
-                <a href="#school-pupils" class="menu-btn anchor-btn">Воспитанники</a>
-            </div>
-
-            <div class="school-scroll">
-
-                <section id="school-management" class="school-section">
-                    <h3>Руководство</h3>
-                    <p class="info-text">
-                        Директор: ФИО, телефон, e-mail.<br>
-                        Заместитель директора: ФИО, телефон.<br>
-                        Заведующий учебной частью: ФИО.
-                    </p>
-                </section>
-
-                <section id="school-pupils" class="school-section">
-                    <h3>Воспитанники</h3>
-                    <p class="info-text">
-                        Наши воспитанники — победители и призёры краевых,
-                        всероссийских и международных соревнований.
-                        Здесь можно разместить список достижений и фото.
-                    </p>
-                </section>
-
-            </div>-->
         </div>
 
         <!-- =====================================================
@@ -374,63 +447,39 @@
 
                 <div class="vacancy-card">
                     <div class="vacancy-icon">🔧</div>
-                    <div class="vacancy-body">
-                        <h3>Техник КИПиА</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Техник КИПиА</h3></div>
                 </div>
-
                 <div class="vacancy-card">
                     <div class="vacancy-icon">🚌</div>
-                    <div class="vacancy-body">
-                        <h3>Водитель автобуса</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Водитель автобуса</h3></div>
                 </div>
-
                 <div class="vacancy-card">
                     <div class="vacancy-icon">🧹</div>
-                    <div class="vacancy-body">
-                        <h3>Уборщик производственных и служебных помещений</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Уборщик производственных и служебных помещений</h3></div>
                 </div>
-
                 <div class="vacancy-card">
                     <div class="vacancy-icon">🧗</div>
-                    <div class="vacancy-body">
-                        <h3>Тренер-преподаватель по скалолазанию</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Тренер-преподаватель по скалолазанию</h3></div>
                 </div>
-
                 <div class="vacancy-card">
                     <div class="vacancy-icon">🛸</div>
-                    <div class="vacancy-body">
-                        <h3>Тренер-преподаватель отделения «Гонка дронов»</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Тренер-преподаватель отделения «Гонка дронов»</h3></div>
                 </div>
-
                 <div class="vacancy-card">
                     <div class="vacancy-icon">🛠️</div>
-                    <div class="vacancy-body">
-                        <h3>Ремонтировщик плоскостных сооружений</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Ремонтировщик плоскостных сооружений</h3></div>
                 </div>
-
                 <div class="vacancy-card">
                     <div class="vacancy-icon">🍂</div>
-                    <div class="vacancy-body">
-                        <h3>Уборщик территорий</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Уборщик территорий</h3></div>
                 </div>
-
                 <div class="vacancy-card">
                     <div class="vacancy-icon">📋</div>
-                    <div class="vacancy-body">
-                        <h3>Администратор тренировочного процесса</h3>
-                    </div>
+                    <div class="vacancy-body"><h3>Администратор тренировочного процесса</h3></div>
                 </div>
 
             </div>
 
-            <!-- Блок-призыв связаться -->
             <div class="vacancy-cta">
                 <h3>Хотите узнать условия?</h3>
                 <p>Запишитесь на собеседование — мы всё расскажем.</p>
