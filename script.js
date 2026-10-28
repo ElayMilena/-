@@ -1,5 +1,5 @@
 /* =========================================================
-   ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ + РОБОТ + ЧАСТИЦЫ + УСЛУГИ
+   ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ + РОБОТ + ЧАСТИЦЫ + УСЛУГИ + ГАЛЕРЕИ
    ========================================================= */
 
 (function () {
@@ -11,9 +11,9 @@
     const particlesLayer = document.getElementById('particles-layer');
 
     const PARTICLE_SETS = {
-        'panel-concerts': ['🎵', '🎼', '🎤'],
-        'panel-rink':     ['⛸️', '❄️', '⛸️', '❄️'],
-        'panel-hockey':   ['🏒', '⚪', '🥅'],
+        'panel-concerts': ['🎵', '🎤'],
+        'panel-rink':     ['⛸️', '❄️'],
+        'panel-hockey':   ['🏑', '⚪', '🥅'],
     };
 
     let particlesTimer = null;
@@ -109,6 +109,58 @@
     }
 
     /* =========================================================
+       ГОРИЗОНТАЛЬНЫЕ ГАЛЕРЕИ: кнопки ‹ ›
+       ========================================================= */
+    function scrollGallery(gallery, direction) {
+        const track = gallery.querySelector('.event-gallery-track');
+        if (!track) return;
+        const firstImg = track.querySelector('.event-gallery-img');
+        const step = firstImg ? firstImg.offsetWidth + 10 : track.clientWidth * 0.8;
+        track.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
+    /* Обновить состояние стрелок (неактивны на краях) */
+    function updateGalleryArrows(gallery) {
+        const track = gallery.querySelector('.event-gallery-track');
+        if (!track) return;
+        const prev = gallery.querySelector('.gallery-arrow--prev');
+        const next = gallery.querySelector('.gallery-arrow--next');
+        if (!prev || !next) return;
+
+        const atStart = track.scrollLeft <= 2;
+        const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+
+        prev.classList.toggle('is-disabled', atStart);
+        next.classList.toggle('is-disabled', atEnd);
+    }
+
+    /* Инициализация всех галерей */
+    function initGalleries() {
+        document.querySelectorAll('[data-gallery]').forEach(gallery => {
+            const track = gallery.querySelector('.event-gallery-track');
+            if (!track) return;
+
+            track.addEventListener('scroll', () => updateGalleryArrows(gallery), { passive: true });
+            window.addEventListener('resize', () => updateGalleryArrows(gallery));
+
+            // Стрелки
+            const prev = gallery.querySelector('.gallery-arrow--prev');
+            const next = gallery.querySelector('.gallery-arrow--next');
+
+            if (prev) prev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                scrollGallery(gallery, -1);
+            });
+            if (next) next.addEventListener('click', (e) => {
+                e.stopPropagation();
+                scrollGallery(gallery, 1);
+            });
+
+            updateGalleryArrows(gallery);
+        });
+    }
+
+    /* =========================================================
        ДЕЛЕГИРОВАНИЕ КЛИКОВ
        ========================================================= */
     document.addEventListener('click', (e) => {
@@ -182,18 +234,6 @@
     });
 
     /* =========================================================
-       ПЛАВНЫЙ СКРОЛЛ К ЯКОРЯМ «СПОРТИВНАЯ ШКОЛА»
-       ========================================================= */
-    document.querySelectorAll('.anchor-btn').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const id = link.getAttribute('href').slice(1);
-            const el = document.getElementById(id);
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-    });
-
-    /* =========================================================
        РОБОТ: КЛИК И КЛАВИАТУРА
        ========================================================= */
     if (robot) {
@@ -219,6 +259,7 @@
     window.addEventListener('load', () => {
         setTimeout(() => robotPeek(false), 600);
         setTimeout(robotHide, 6600);
+        initGalleries();
     });
 
     window.showScreen = showScreen;
