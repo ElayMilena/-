@@ -1,3 +1,6 @@
+/* =========================================================
+   БАЗА
+   ========================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +23,11 @@ body {
     z-index: 1;
 }
 
-.screen {
-    display: none;
-    animation: fadeIn 0.3s ease;
-}
-
-.screen.active {
-    display: block;
-}
+/* =========================================================
+   ЭКРАНЫ
+   ========================================================= */
+.screen { display: none; animation: fadeIn 0.3s ease; }
+.screen.active { display: block; }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -42,17 +42,10 @@ body {
     margin-bottom: 16px;
 }
 
-h1 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 20px;
-    margin: 16px 0 20px;
-    text-align: center;
-}
+h1 { font-size: 22px; margin-bottom: 12px; text-align: center; }
+h2 { font-size: 20px; margin: 16px 0 20px; text-align: center; }
+h3 { font-size: 17px; margin-bottom: 8px; }
+h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
 
 .welcome-text,
 .info-text {
@@ -63,11 +56,10 @@ h2 {
     color: #555;
 }
 
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+/* =========================================================
+   МЕНЮ / КНОПКИ
+   ========================================================= */
+.menu { display: flex; flex-direction: column; gap: 12px; }
 
 .menu-btn {
     padding: 16px;
@@ -79,12 +71,12 @@ h2 {
     color: #fff;
     cursor: pointer;
     transition: transform 0.15s, opacity 0.15s;
+    text-align: center;
+    text-decoration: none;
+    display: block;
 }
 
-.menu-btn:active {
-    transform: scale(0.97);
-    opacity: 0.85;
-}
+.menu-btn:active { transform: scale(0.97); opacity: 0.85; }
 
 .back-btn {
     padding: 10px 16px;
@@ -98,9 +90,375 @@ h2 {
 }
 
 /* =========================================================
+   ОБЪЕКТЫ — карточки с чередованием
+   ========================================================= */
+.objects-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.object-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.object-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.object-card--reverse { direction: rtl; }
+.object-card--reverse .object-text { direction: ltr; }
+
+.object-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.object-text { font-size: 14px; line-height: 1.45; color: #444; }
+
+/* =========================================================
+   КНОПКА «УСЛУГИ» ПОД ОБЪЕКТОМ
+   ========================================================= */
+.services-toggle {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid #2ea6ff;
+    border-radius: 12px;
+    background: #fff;
+    color: #2ea6ff;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.services-toggle:active { transform: scale(0.98); }
+
+.services-toggle.open {
+    background: #2ea6ff;
+    color: #fff;
+}
+
+/* =========================================================
+   ПАНЕЛЬ УСЛУГ
+   ========================================================= */
+.services-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: max-height 0.4s ease, opacity 0.3s ease,
+                padding 0.3s ease, margin 0.3s ease;
+    padding: 0;
+    margin: 0;
+}
+
+.services-panel.open {
+    max-height: 4000px;
+    opacity: 1;
+    padding: 16px;
+}
+
+/* --- Табы --- */
+.services-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.services-tab {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #d6d6d6;
+    border-radius: 20px;
+    background: #fafafa;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.services-tab:hover { border-color: #2ea6ff; color: #2ea6ff; }
+
+.services-tab.active {
+    background: #2ea6ff;
+    border-color: #2ea6ff;
+    color: #fff;
+}
+
+/* --- Контент услуг --- */
+.services-content { display: none; animation: fadeIn 0.3s ease; }
+.services-content.active { display: block; }
+
+.services-text {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.services-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+    margin: 14px 0 8px;
+}
+
+.services-list {
+    margin: 0 0 12px 0;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.services-list li { margin-bottom: 6px; }
+.services-list strong { color: #2ea6ff; }
+
+.services-contact {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #eef7ff;
+    border-left: 4px solid #2ea6ff;
+    border-radius: 8px;
+    color: #1a5a80;
+}
+
+.services-contact strong { color: #2ea6ff; }
+
+/* --- Галерея картинок услуг --- */
+.services-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.services-gallery--single {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+    background: #f0f0f0;
+    transition: transform 0.2s;
+}
+
+.gallery-img:active { transform: scale(0.98); }
+
+/* =========================================================
+   МЕРОПРИЯТИЯ — аккордеон
+   ========================================================= */
+.accordion { display: flex; flex-direction: column; gap: 10px; }
+.acc-item { display: flex; flex-direction: column; gap: 8px; }
+
+.acc-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.2s ease;
+    padding: 0 4px;
+}
+
+.acc-panel.open {
+    max-height: 300px;
+    padding: 8px 4px;
+}
+
+/* =========================================================
+   СПОРТИВНАЯ ШКОЛА
+   ========================================================= */
+.school-scroll {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-height: 65vh;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.school-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    scroll-margin-top: 16px;
+}
+
+/* =========================================================
+   ВАКАНСИИ
+   ========================================================= */
+.vacancies-intro {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 4px;
+}
+
+.vacancies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.vacancy-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px 16px;
+    border-left: 4px solid #2ea6ff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.vacancy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 166, 255, 0.18);
+    border-left-color: #1a8ae0;
+}
+
+.vacancy-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: #eef7ff;
+    border-radius: 12px;
+}
+
+.vacancy-body { flex: 1; min-width: 0; }
+
+.vacancy-body h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.35;
+}
+
+/* --- Блок-призыв --- */
+.vacancy-cta {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #2ea6ff 0%, #1a8ae0 100%);
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(46, 166, 255, 0.3);
+}
+
+.vacancy-cta h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.vacancy-cta p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.vacancy-phone {
+    display: inline-block;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2ea6ff;
+    background: #fff;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.vacancy-phone:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.vacancy-phone:active { transform: scale(0.98); }
+
+/* =========================================================
+   СЛОЙ ЧАСТИЦ
+   ========================================================= */
+.particles-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9998;
+}
+
+.particle {
+    position: absolute;
+    bottom: -60px;
+    display: inline-block;
+    line-height: 1;
+    will-change: transform, opacity;
+    animation-name: particleFly;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    user-select: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes particleFly {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(-45vh) translateX(20px) rotate(var(--rot, 0deg)); }
+    85% { opacity: 1; }
+    100% {
+        transform: translateY(-105vh) translateX(-20px) rotate(calc(var(--rot, 0deg) * 2));
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .particle { animation: none; opacity: 0; }
+}
+
+/* =========================================================
    РОБОТ
    ========================================================= */
-
 .robot {
     position: absolute;
     top: 35%;
@@ -109,15 +467,12 @@ h2 {
     width: 170px;
     height: 240px;
     z-index: 9999;
-
-    /* Контейнер*/
     pointer-events: none;
     overflow: visible;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* ... */
 .robot__peek {
     position: absolute;
     top: 0;
@@ -131,10 +486,7 @@ h2 {
     pointer-events: auto;
 }
 
-/* Когда робот "выглядывает" */
-.robot.is-peeking .robot__peek {
-    transform: translateX(-115px);
-}
+.robot.is-peeking .robot__peek { transform: translateX(-115px); }
 
 .robot__body {
     position: relative;
@@ -143,7 +495,6 @@ h2 {
     animation: robotFloat 3s ease-in-out infinite;
 }
 
-/* ---- Голова ---- */
 .robot__head {
     position: absolute;
     top: 6px;
@@ -161,7 +512,6 @@ h2 {
     gap: 12px;
 }
 
-/* Антенна */
 .robot__head::before {
     content: "";
     position: absolute;
@@ -208,7 +558,6 @@ h2 {
     border-radius: 0 0 12px 12px;
 }
 
-/* ---- Туловище ---- */
 .robot__torso {
     position: absolute;
     top: 72px;
@@ -220,31 +569,23 @@ h2 {
     border-radius: 18px;
     box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.06),
                 0 8px 16px rgba(0, 0, 0, 0.15);
-    /* Логотип позиционируется абсолютно относительно туловища */
-    position: relative; /* ← нужно для .robot__logo */
+    position: relative;
 }
 
-/* =========================================================
-   ЛОГОТИП НА ТЕЛЕ РОБОТА
-   ========================================================= */
 .robot__logo {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    /* Размер логотипа — подгони под свою картинку */
     width: 46px;
     height: auto;
     max-height: 46px;
-
     object-fit: contain;
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
 }
 
-/* ---- Руки ---- */
 .robot__arm {
     position: absolute;
     top: 80px;
@@ -256,26 +597,12 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
-/* Левая рука — прижата к корпусу */
-.robot__arm--left {
-    left: 15px;
-    transform: rotate(10deg);
-}
+.robot__arm--left  { left: 15px;  transform: rotate(10deg); }
+.robot__arm--right { left: 140px; transform: rotate(-10deg); }
 
-/* Правая рука — машем */
-.robot__arm--right {
-    left: 140px;
-    transform: rotate(-10deg);
-}
-
-/* ---- Анимации ---- */
-
-/* Машет ЛЕВОЙ рукой (одной) */
 .robot.is-waving .robot__arm--left {
     animation: robotWaveLeft 0.75s ease-in-out infinite;
 }
-
-/* Машет ДВУМЯ руками */
 .robot.is-waving-both .robot__arm--right {
     animation: robotWaveRight 0.75s ease-in-out infinite;
 }
@@ -283,11 +610,24 @@ h2 {
     animation: robotWaveLeft 0.75s ease-in-out infinite;
 }
 
-/* Лёгкое покачивание корпуса */
 .robot.is-waving .robot__body,
 .robot.is-waving-both .robot__body {
     animation: robotFloat 3s ease-in-out infinite,
                robotSway 0.75s ease-in-out infinite;
+}
+
+.robot.is-spinning .robot__peek {
+    transform: translateX(-115px);
+    transition: transform 0.3s ease;
+}
+.robot.is-spinning .robot__body {
+    animation: robotSpin 1.2s ease-in-out forwards;
+}
+.robot.is-spinning .robot__arm--left {
+    animation: robotArmUpLeft 1.2s ease-in-out forwards;
+}
+.robot.is-spinning .robot__arm--right {
+    animation: robotArmUpRight 1.2s ease-in-out forwards;
 }
 
 @keyframes robotWaveRight {
@@ -295,52 +635,109 @@ h2 {
     50%  { transform: rotate(-80deg); }
     100% { transform: rotate(-10deg); }
 }
-
 @keyframes robotWaveLeft {
     0%   { transform: rotate(10deg); }
     50%  { transform: rotate(80deg); }
     100% { transform: rotate(10deg); }
 }
-
 @keyframes robotFloat {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-6px); }
 }
-
 @keyframes robotSway {
     0%, 100% { rotate: 0deg; }
     50%      { rotate: 4deg; }
 }
-
 @keyframes robotBlink {
     0%, 92%, 100% { transform: scaleY(1); }
     95%           { transform: scaleY(0.1); }
 }
-
-@keyframes robotPulse {
-    0%, 100% { transform: translateX(-50%) scale(1);   opacity: 1;   }
-    50%      { transform: translateX(-50%) scale(1.15); opacity: 0.8; }
+@keyframes robotSpin {
+    0%   { transform: rotateY(0deg)   translateY(0); }
+    50%  { transform: rotateY(180deg) translateY(-8px); }
+    100% { transform: rotateY(360deg) translateY(0); }
+}
+@keyframes robotArmUpLeft {
+    0%   { transform: rotate(10deg); }
+    50%  { transform: rotate(150deg); }
+    100% { transform: rotate(10deg); }
+}
+@keyframes robotArmUpRight {
+    0%   { transform: rotate(-10deg); }
+    50%  { transform: rotate(-150deg); }
+    100% { transform: rotate(-10deg); }
 }
 
-/* Адаптация на меньшие экраны */
-@media (max-width: 380px) {
-    .robot {
-        width: 140px;
-        height: 200px;
-        right: -125px;
-    }
-    .robot__peek {
-        width: 140px;
-        height: 200px;
-    }
-    .robot.is-peeking .robot__peek {
-        transform: translateX(-95px);
-    }
-    .robot__arm--right {
-        left: 105px;
-    }
-    .robot__logo {
-        width: 38px;
-        max-height: 38px;
-    }
+/* =========================================================
+   АДАПТИВНОСТЬ
+   ========================================================= */
+@media (max-width: 768px) {
+    .app { max-width: 100%; padding: 16px; }
+
+    .object-card { grid-template-columns: 1fr; }
+    .object-card--reverse { direction: ltr; }
+    .object-img { height: 180px; }
+
+    .services-gallery { gap: 10px; }
+    .gallery-img { height: auto; }
+
+    .robot { width: 150px; height: 210px; right: -135px; }
+    .robot__peek { width: 150px; height: 210px; }
+    .robot.is-peeking .robot__peek,
+    .robot.is-spinning .robot__peek { transform: translateX(-100px); }
+    .robot__arm--right { left: 120px; }
+    .robot__logo { width: 40px; max-height: 40px; }
+}
+
+@media (max-width: 480px) {
+    .app { padding: 12px; }
+
+    h1 { font-size: 20px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 16px; }
+    h4 { font-size: 15px; }
+
+    .hero-image { max-height: 180px; }
+    .menu-btn { padding: 14px; font-size: 15px; }
+
+    .object-card { padding: 12px; }
+    .object-img { height: 150px; }
+
+    .objects-scroll,
+    .school-scroll,
+    .vacancies-list { max-height: none; overflow-y: visible; }
+
+    .services-panel.open { padding: 12px; }
+    .services-tab { padding: 7px 12px; font-size: 12px; }
+    .services-gallery { gap: 10px; }
+    .gallery-img { height: auto; }
+
+    .vacancy-card { padding: 12px 14px; gap: 12px; }
+    .vacancy-icon { width: 40px; height: 40px; font-size: 20px; }
+    .vacancy-body h3 { font-size: 14px; }
+    .vacancy-cta { padding: 16px; }
+    .vacancy-cta h3 { font-size: 16px; }
+    .vacancy-phone { padding: 9px 20px; font-size: 15px; }
+
+    .robot { width: 130px; height: 185px; right: -120px; }
+    .robot__peek { width: 130px; height: 185px; }
+    .robot.is-peeking .robot__peek,
+    .robot.is-spinning .robot__peek { transform: translateX(-85px); }
+    .robot__head { width: 60px; height: 52px; }
+    .robot__torso { width: 78px; height: 84px; top: 60px; }
+    .robot__arm { height: 64px; top: 68px; }
+    .robot__arm--left { left: 10px; }
+    .robot__arm--right { left: 100px; }
+    .robot__logo { width: 34px; max-height: 34px; }
+}
+
+@media (max-width: 360px) {
+    .app { padding: 10px; }
+    .menu-btn { padding: 12px; font-size: 14px; }
+
+    .robot { width: 115px; height: 165px; right: -105px; }
+    .robot__peek { width: 115px; height: 165px; }
+    .robot.is-peeking .robot__peek,
+    .robot.is-spinning .robot__peek { transform: translateX(-75px); }
+    .robot__arm--right { left: 88px; }
 }
