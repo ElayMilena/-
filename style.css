@@ -74,6 +74,9 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     text-align: center;
     text-decoration: none;
     display: block;
+    /* Кнопки должны быть выше робота, чтобы он не перекрывал клики */
+    position: relative;
+    z-index: 10;
 }
 
 .menu-btn:active { transform: scale(0.97); opacity: 0.85; }
@@ -87,6 +90,8 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     color: #2ea6ff;
     cursor: pointer;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 10;
 }
 
 /* =========================================================
@@ -144,6 +149,8 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     color: #2ea6ff;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.15s;
+    position: relative;
+    z-index: 10;
 }
 
 .services-toggle:active { transform: scale(0.98); }
