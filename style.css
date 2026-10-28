@@ -74,7 +74,6 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     text-align: center;
     text-decoration: none;
     display: block;
-    /* Кнопки должны быть выше робота, чтобы он не перекрывал клики */
     position: relative;
     z-index: 10;
 }
@@ -95,7 +94,7 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
 }
 
 /* =========================================================
-   ОБЪЕКТЫ — карточки с чередованием
+   ОБЪЕКТЫ
    ========================================================= */
 .objects-scroll {
     display: flex;
@@ -182,7 +181,6 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     padding: 16px;
 }
 
-/* --- Табы --- */
 .services-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -213,7 +211,6 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     color: #fff;
 }
 
-/* --- Контент услуг --- */
 .services-content { display: none; animation: fadeIn 0.3s ease; }
 .services-content.active { display: block; }
 
@@ -255,7 +252,6 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
 
 .services-contact strong { color: #2ea6ff; }
 
-/* --- Галерея картинок услуг --- */
 .services-gallery {
     display: flex;
     flex-direction: column;
@@ -289,13 +285,157 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
 .acc-panel {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.2s ease;
+    transition: max-height 0.5s ease, padding 0.25s ease;
     padding: 0 4px;
 }
 
 .acc-panel.open {
-    max-height: 300px;
-    padding: 8px 4px;
+    max-height: 3000px;
+    padding: 8px 4px 16px;
+}
+
+.acc-panel-inner {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.acc-panel-inner h4 { margin-top: 4px; }
+.acc-panel-inner h4 + .event-table { margin-top: 8px; }
+
+/* =========================================================
+   ТАБЛИЦЫ МЕРОПРИЯТИЙ
+   ========================================================= */
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.event-table thead {
+    background: #2ea6ff;
+    color: #fff;
+}
+
+.event-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+
+.event-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eef2f6;
+    color: #333;
+    vertical-align: top;
+}
+
+.event-table tbody tr:last-child td { border-bottom: none; }
+.event-table tbody tr:nth-child(even) { background: #f7fbff; }
+
+.event-note {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #555;
+    margin: 4px 0 18px;
+    padding: 10px 14px;
+    background: #eef7ff;
+    border-left: 4px solid #2ea6ff;
+    border-radius: 8px;
+}
+
+.event-note a {
+    color: #2ea6ff;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.event-note a:hover { text-decoration: underline; }
+
+/* =========================================================
+   ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ ПРОШЕДШИХ МЕРОПРИЯТИЙ
+   ========================================================= */
+.gallery-title {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.event-gallery {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.event-gallery-track {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 10px;
+    scrollbar-width: thin;
+}
+
+/* Прячем стандартный скроллбар в WebKit, но оставляем возможность скроллить */
+.event-gallery-track::-webkit-scrollbar {
+    height: 6px;
+}
+.event-gallery-track::-webkit-scrollbar-thumb {
+    background: #cfe6fa;
+    border-radius: 3px;
+}
+
+.event-gallery-img {
+    flex: 0 0 calc(80% - 5px);
+    width: calc(80% - 5px);
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #f0f0f0;
+    scroll-snap-align: start;
+    transition: transform 0.2s;
+}
+
+.event-gallery-img:active { transform: scale(0.98); }
+
+/* Стрелки галереи */
+.gallery-arrow {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #2ea6ff;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(46, 166, 255, 0.35);
+    transition: transform 0.15s, opacity 0.2s, background 0.2s;
+    user-select: none;
+}
+
+.gallery-arrow:hover { background: #1a8ae0; }
+.gallery-arrow:active { transform: scale(0.92); }
+
+.gallery-arrow.is-disabled {
+    opacity: 0.35;
+    pointer-events: none;
 }
 
 /* =========================================================
@@ -379,7 +519,6 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     line-height: 1.35;
 }
 
-/* --- Блок-призыв --- */
 .vacancy-cta {
     margin-top: 20px;
     padding: 20px;
@@ -688,6 +827,12 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     .services-gallery { gap: 10px; }
     .gallery-img { height: auto; }
 
+    .event-gallery-img {
+        flex: 0 0 calc(85% - 5px);
+        width: calc(85% - 5px);
+        height: 200px;
+    }
+
     .robot { width: 150px; height: 210px; right: -135px; }
     .robot__peek { width: 150px; height: 210px; }
     .robot.is-peeking .robot__peek,
@@ -718,6 +863,27 @@ h4 { font-size: 17px; margin-bottom: 12px; color: #2ea6ff; }
     .services-tab { padding: 7px 12px; font-size: 12px; }
     .services-gallery { gap: 10px; }
     .gallery-img { height: auto; }
+
+    .acc-panel-inner { padding: 12px; }
+
+    .event-table th,
+    .event-table td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    /* Галерея на мобильных */
+    .event-gallery { gap: 4px; }
+    .event-gallery-img {
+        flex: 0 0 calc(88% - 4px);
+        width: calc(88% - 4px);
+        height: 180px;
+    }
+    .gallery-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+    }
 
     .vacancy-card { padding: 12px 14px; gap: 12px; }
     .vacancy-icon { width: 40px; height: 40px; font-size: 20px; }
