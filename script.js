@@ -1,13 +1,7 @@
-/* =========================================================
-   ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ + РОБОТ + ЧАСТИЦЫ + УСЛУГИ + ГАЛЕРЕИ
-   ========================================================= */
-
 (function () {
     const robot = document.getElementById('robot');
 
-    /* =========================================================
-       ЧАСТИЦЫ ДЛЯ КНОПОК «МЕРОПРИЯТИЯ»
-       ========================================================= */
+    /* ЧАСТИЦЫ ДЛЯ КНОПОК «МЕРОПРИЯТИЯ» */
     const particlesLayer = document.getElementById('particles-layer');
 
     const PARTICLE_SETS = {
@@ -59,9 +53,7 @@
         setTimeout(() => el.remove(), (dur + 0.5) * 1000);
     }
 
-    /* =========================================================
-       РОБОТ
-       ========================================================= */
+    /* РОБОТ */
     function robotPeek(bothHands = false) {
         if (!robot) return;
         robot.classList.remove('is-spinning');
@@ -85,9 +77,7 @@
         }, 1200);
     }
 
-    /* =========================================================
-       ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ
-       ========================================================= */
+    /* ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ */
     function showScreen(screenId) {
         const screens = document.querySelectorAll('.screen');
         const target = document.getElementById(screenId);
@@ -108,9 +98,7 @@
         }
     }
 
-    /* =========================================================
-       ГОРИЗОНТАЛЬНЫЕ ГАЛЕРЕИ: кнопки ‹ ›
-       ========================================================= */
+    /* ГОРИЗОНТАЛЬНЫЕ ГАЛЕРЕИ (фото мероприятий + команды) */
     function scrollGallery(gallery, direction) {
         const track = gallery.querySelector('.event-gallery-track');
         if (!track) return;
@@ -119,7 +107,6 @@
         track.scrollBy({ left: direction * step, behavior: 'smooth' });
     }
 
-    /* Обновить состояние стрелок (неактивны на краях) */
     function updateGalleryArrows(gallery) {
         const track = gallery.querySelector('.event-gallery-track');
         if (!track) return;
@@ -134,7 +121,6 @@
         next.classList.toggle('is-disabled', atEnd);
     }
 
-    /* Инициализация всех галерей */
     function initGalleries() {
         document.querySelectorAll('[data-gallery]').forEach(gallery => {
             const track = gallery.querySelector('.event-gallery-track');
@@ -143,7 +129,6 @@
             track.addEventListener('scroll', () => updateGalleryArrows(gallery), { passive: true });
             window.addEventListener('resize', () => updateGalleryArrows(gallery));
 
-            // Стрелки
             const prev = gallery.querySelector('.gallery-arrow--prev');
             const next = gallery.querySelector('.gallery-arrow--next');
 
@@ -160,19 +145,15 @@
         });
     }
 
-    /* =========================================================
-       ДЕЛЕГИРОВАНИЕ КЛИКОВ
-       ========================================================= */
+    /* ДЕЛЕГИРОВАНИЕ КЛИКОВ */
     document.addEventListener('click', (e) => {
 
-        /* 1) Навигация между экранами */
         const navBtn = e.target.closest('[data-target]');
         if (navBtn) {
             showScreen(navBtn.dataset.target);
             return;
         }
 
-        /* 2) Аккордеон «Мероприятия» + частицы */
         const toggle = e.target.closest('.acc-toggle');
         if (toggle) {
             const panel = document.getElementById(toggle.dataset.panel);
@@ -191,7 +172,6 @@
             return;
         }
 
-        /* 3) Кнопка «Услуги» под объектом */
         const servToggle = e.target.closest('.services-toggle');
         if (servToggle) {
             const block = servToggle.closest('.object-block');
@@ -216,7 +196,6 @@
             return;
         }
 
-        /* 4) Табы внутри услуг Арены «Ерофей» */
         const tab = e.target.closest('.services-tab');
         if (tab) {
             const tabsWrap = tab.closest('.services-tabs');
@@ -231,11 +210,26 @@
             if (targetContent) targetContent.classList.add('active');
             return;
         }
+
+        const sportTab = e.target.closest('.sport-tab');
+        if (sportTab) {
+            const screen = sportTab.closest('#school-screen');
+            if (!screen) return;
+
+            screen.querySelectorAll('.sport-tab').forEach(t => t.classList.remove('active'));
+            sportTab.classList.add('active');
+
+            screen.querySelectorAll('.sport-panel').forEach(p => p.classList.remove('active'));
+            const targetPanel = screen.querySelector('#sport-' + sportTab.dataset.sport);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+                // Пересчитываем стрелки у галереи команд после показа панели
+                targetPanel.querySelectorAll('[data-gallery]').forEach(updateGalleryArrows);
+            }
+            return;
+        }
     });
 
-    /* =========================================================
-       РОБОТ: КЛИК И КЛАВИАТУРА
-       ========================================================= */
     if (robot) {
         robot.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -253,9 +247,7 @@
         });
     }
 
-    /* =========================================================
-       ПЕРВОЕ ПОЯВЛЕНИЕ РОБОТА НА ГЛАВНОЙ
-       ========================================================= */
+
     window.addEventListener('load', () => {
         setTimeout(() => robotPeek(false), 600);
         setTimeout(robotHide, 6600);
