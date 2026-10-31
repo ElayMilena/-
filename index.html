@@ -9,13 +9,9 @@
 <body>
     <div class="app">
 
-        <!-- =====================================================
-             ГЛАВНЫЙ ЭКРАН
-             Здесь же живёт РОБОТ (только на этом экране)
-             ===================================================== -->
+        <!-- ГЛАВНЫЙ ЭКРАН -->
         <div id="main-screen" class="screen active">
 
-            <!-- ФОТО: замените images/erofey.jpg на своё главное фото -->
             <img src="images/erofey.jpg" alt="КГАУ ДО СШОР Ерофей" class="hero-image">
 
             <h1>КГАУ ДО СШОР «Ерофей»</h1>
@@ -35,7 +31,7 @@
                 <button class="menu-btn" data-target="vacancies-screen">Вакансии</button>
             </div>
 
-            <!-- РОБОТ (только на главном экране) -->
+            <!-- РОБОТ -->
             <div class="robot" id="robot" role="button" tabindex="0" aria-label="Поздороваться с роботом">
                 <div class="robot__peek">
                     <div class="robot__body">
@@ -45,7 +41,7 @@
                             <div class="robot__mouth"></div>
                         </div>
                         <div class="robot__torso">
-                            <!-- ЛОГОТИП: замените images/logo.png на свой -->
+
                             <img src="images/logo.png" alt="Логотип" class="robot__logo">
                         </div>
                         <div class="robot__arm robot__arm--left"></div>
@@ -55,16 +51,14 @@
             </div>
         </div>
 
-        <!-- =====================================================
-             ЭКРАН «ОБЪЕКТЫ»
-             ===================================================== -->
+        <!-- ЭКРАН «ОБЪЕКТЫ» -->
         <div id="objects-screen" class="screen">
             <button class="back-btn" data-target="main-screen">← Назад</button>
             <h2>Объекты</h2>
 
             <div class="objects-scroll">
 
-                <!-- БЛОК 1: Арена «Ерофей» -->
+                <!-- БЛОК 1-->
                 <div class="object-block">
                     <div class="object-card">
                         <img src="images/arena.jpg" alt="Арена Ерофей" class="object-img">
@@ -136,7 +130,6 @@
                             <p class="services-contact">
                                 Для записи в секцию звоните: <strong>8-909-879-72-00</strong>
                             </p>
-                            
                         </div>
 
                         <div class="services-content" id="tab-rink">
@@ -188,7 +181,7 @@
                     </div>
                 </div>
 
-                <!-- БЛОК 2: Фиджитал-центр -->
+                <!-- БЛОК 2-->
                 <div class="object-block">
                     <div class="object-card object-card--reverse">
                         <img src="images/fidjital.jpg" alt="Фиджитал-центр" class="object-img">
@@ -206,7 +199,6 @@
 
                     <div class="services-panel" id="services-fidjital">
                         <div class="services-gallery">
-                            <!-- ФОТО: замените на 7 своих картинок услуг -->
                             <img src="images/fidjital-1.jpg" alt="Услуга 1" class="gallery-img">
                             <img src="images/fidjital-2.jpg" alt="Услуга 2" class="gallery-img">
                             <img src="images/fidjital-3.jpg" alt="Услуга 3" class="gallery-img">
@@ -218,7 +210,7 @@
                     </div>
                 </div>
 
-                <!-- БЛОК 3: Модульный спортивный зал -->
+                <!-- БЛОК 3-->
                 <div class="object-block">
                     <div class="object-card">
                         <img src="images/modul.jpg" alt="Модульный спортивный зал" class="object-img">
@@ -244,9 +236,7 @@
             </div>
         </div>
 
-        <!-- =====================================================
-             ЭКРАН «МЕРОПРИЯТИЯ»
-             ===================================================== -->
+        <!-- ЭКРАН «МЕРОПРИЯТИЯ» -->
         <div id="events-screen" class="screen">
             <button class="back-btn" data-target="main-screen">← Назад</button>
             <h2>Мероприятия</h2>
@@ -286,11 +276,10 @@
 
                             <h4 class="gallery-title">Фотогалерея прошедших концертов</h4>
 
-                            <!-- ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ: листается вбок -->
                             <div class="event-gallery" data-gallery>
                                 <button class="gallery-arrow gallery-arrow--prev" type="button" aria-label="Назад">‹</button>
                                 <div class="event-gallery-track">
-                                    <!-- ФОТО: замените на фото с прошедших концертов -->
+
                                     <img src="images/concert-1.jpg" alt="Концерт 1" class="event-gallery-img">
                                     <img src="images/concert-2.jpg" alt="Концерт 2" class="event-gallery-img">
                                     <img src="images/concert-3.jpg" alt="Концерт 3" class="event-gallery-img">
@@ -303,7 +292,7 @@
                     </div>
                 </div>
 
-                <!-- ===== КАТОК ===== -->
+                <!--КАТОК-->
                 <div class="acc-item">
                     <button class="menu-btn acc-toggle" data-panel="panel-rink">
                         ⛸ Каток
@@ -333,17 +322,16 @@
 
                             <h4 class="gallery-title">Фотогалерея прошедших сеансов</h4>
 
-                            <!-- ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ: листается вбок -->
                             <div class="event-gallery" data-gallery>
                                 <button class="gallery-arrow gallery-arrow--prev" type="button" aria-label="Назад">‹</button>
                                 <div class="event-gallery-track">
-                                    <!-- ФОТО: замените на фото с прошедших сеансов катка -->
+
                                     <img src="images/katok-1.jpg" alt="Каток 1" class="event-gallery-img">
                                     <img src="images/katok-2.jpg" alt="Каток 2" class="event-gallery-img">
                                     <img src="images/katok-3.jpg" alt="Каток 3" class="event-gallery-img">
                                     <img src="images/katok-4.jpg" alt="Каток 4" class="event-gallery-img">
-                                    <img src="images/katok-5.jpg" alt="Каток 4" class="event-gallery-img">
-                                    <img src="images/katok-6.jpg" alt="Каток 4" class="event-gallery-img">
+                                    <img src="images/katok-5.jpg" alt="Каток 5" class="event-gallery-img">
+                                    <img src="images/katok-6.jpg" alt="Каток 6" class="event-gallery-img">
                                 </div>
                                 <button class="gallery-arrow gallery-arrow--next" type="button" aria-label="Вперёд">›</button>
                             </div>
@@ -352,7 +340,7 @@
                     </div>
                 </div>
 
-                <!-- ===== ХОККЕЙ ===== -->
+                <!--ХОККЕЙ-->
                 <div class="acc-item">
                     <button class="menu-btn acc-toggle" data-panel="panel-hockey">
                         🏒 Хоккей
@@ -403,11 +391,10 @@
 
                             <h4 class="gallery-title">Фотогалерея прошедших матчей</h4>
 
-                            <!-- ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ: листается вбок -->
                             <div class="event-gallery" data-gallery>
                                 <button class="gallery-arrow gallery-arrow--prev" type="button" aria-label="Назад">‹</button>
                                 <div class="event-gallery-track">
-                                    <!-- ФОТО: замените на фото с прошедших матчей -->
+
                                     <img src="images/hockey-1.jpg" alt="Матч 1" class="event-gallery-img">
                                     <img src="images/hockey-2.jpg" alt="Матч 2" class="event-gallery-img">
                                     <img src="images/hockey-3.jpg" alt="Матч 3" class="event-gallery-img">
@@ -423,17 +410,420 @@
             </div>
         </div>
 
-        <!-- =====================================================
-             ЭКРАН «СПОРТИВНАЯ ШКОЛА»
-             ===================================================== -->
+        <!--ЭКРАН «СПОРТИВНАЯ ШКОЛА»-->
         <div id="school-screen" class="screen">
             <button class="back-btn" data-target="main-screen">← Назад</button>
             <h2>Спортивная школа</h2>
+
+            <!--Переключатель-->
+            <div class="sport-switch">
+                <button class="sport-tab active" data-sport="hockey">Хоккей с мячом</button>
+                <button class="sport-tab" data-sport="climbing">Скалолазание</button>
+            </div>
+
+            <!--ХОККЕЙ С МЯЧОМ-->
+            <div class="sport-panel active" id="sport-hockey">
+
+                <!-- ТРЕНЕРСКИЙ СОСТАВ -->
+                <div class="school-section">
+                    <h3 class="school-title">Тренерский состав</h3>
+                    <div class="school-scroll">
+
+                        <div class="person-card">
+                            <img src="images/coaches/stashko.jpg" alt="Сташко Александр Васильевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Сташко Александр Васильевич</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2006», «Ерофей-2016»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            
+                            <img src="images/coaches/kondrashkin.jpg" alt="Кондрашкин Иван Викторович" class="person-img">
+                            <div class="person-info">
+                                <h4>Кондрашкин Иван Викторович</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2007», «Ерофей-2015»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                           
+                            <img src="images/coaches/pashnin.jpg" alt="Пашнин Егор Андреевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Пашнин Егор Андреевич</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2009», «Ерофей-2017»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                           
+                            <img src="images/coaches/stebletsov.jpg" alt="Стеблецов Евгений Юрьевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Стеблецов Евгений Юрьевич</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2010»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/coaches/korev.jpg" alt="Корев Денис Леонидович" class="person-img">
+                            <div class="person-info">
+                                <h4>Корев Денис Леонидович</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2011»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/coaches/grishin.jpg" alt="Гришин Дмитрий Евгеньевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Гришин Дмитрий Евгеньевич</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2012»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/coaches/kizilov.jpg" alt="Кизилов Артём Владимирович" class="person-img">
+                            <div class="person-info">
+                                <h4>Кизилов Артём Владимирович</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2013»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/coaches/skopinok.jpg" alt="Скопинок Никита Анатольевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Скопинок Никита Анатольевич</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Ерофей-2014»</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/coaches/chiganov.jpg" alt="Чиганов Александр Александрович" class="person-img">
+                            <div class="person-info">
+                                <h4>Чиганов Александр Александрович</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                                <p class="person-extra">Команда: «Лесохимик»</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- КОМАНДЫ -->
+                <div class="school-section">
+                    <h3 class="school-title">Команды</h3>
+
+                    <div class="event-gallery" data-gallery>
+                        <button class="gallery-arrow gallery-arrow--prev" type="button" aria-label="Назад">‹</button>
+                        <div class="event-gallery-track">
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2006.jpg" alt="Ерофей-2006" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2006»</h4>
+                                    <p class="team-extra">Тренер: Сташко Александр Васильевич</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2016.jpg" alt="Ерофей-2016" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2016»</h4>
+                                    <p class="team-extra">Тренер: Сташко Александр Васильевич</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2007.jpg" alt="Ерофей-2007" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2007»</h4>
+                                    <p class="team-extra">Тренер: Кондрашкин Иван Викторович</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2015.jpg" alt="Ерофей-2015" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2015»</h4>
+                                    <p class="team-extra">Тренер: Кондрашкин Иван Викторович</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2009.jpg" alt="Ерофей-2009" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2009»</h4>
+                                    <p class="team-extra">Тренер: Пашнин Егор Андреевич</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2017.jpg" alt="Ерофей-2017" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2017»</h4>
+                                    <p class="team-extra">Тренер: Пашнин Егор Андреевич</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2010.jpg" alt="Ерофей-2010" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2010»</h4>
+                                    <p class="team-extra">Тренер: Стеблецов Евгений Юрьевич</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2011.jpg" alt="Ерофей-2011" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2011»</h4>
+                                    <p class="team-extra">Тренер: Корев Денис Леонидович</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2012.jpg" alt="Ерофей-2012" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2012»</h4>
+                                    <p class="team-extra">Тренер: Гришин Дмитрий Евгеньевич</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2013.jpg" alt="Ерофей-2013" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2013»</h4>
+                                    <p class="team-extra">Тренер: Кизилов Артём Владимирович</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/erofey-2014.jpg" alt="Ерофей-2014" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Ерофей-2014»</h4>
+                                    <p class="team-extra">Тренер: Скопинок Никита Анатольевич</p>
+                                </div>
+                            </div>
+
+                            <div class="team-card event-gallery-img">
+                                <img src="images/teams/lesohimik.jpg" alt="Лесохимик" class="team-img">
+                                <div class="team-info">
+                                    <h4>«Лесохимик»</h4>
+                                    <p class="team-extra">Тренер: Чиганов Александр Александрович</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button class="gallery-arrow gallery-arrow--next" type="button" aria-label="Вперёд">›</button>
+                    </div>
+                </div>
+
+                                <!-- РУКОВОДСТВО -->
+                <div class="school-section">
+                    <h3 class="school-title">Руководство</h3>
+                    <div class="school-scroll">
+
+                        <div class="person-card">
+                            <img src="images/management/yurov.jpg" alt="Юров Константин Геннадьевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Юров Константин Геннадьевич</h4>
+                                <p class="person-role">Директор</p>
+                                <p class="person-extra">📞 45-67-91</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/golovenko.jpg" alt="Головенко Татьяна Ивановна" class="person-img">
+                            <div class="person-info">
+                                <h4>Головенко Татьяна Ивановна</h4>
+                                <p class="person-role">Заместитель директора по общим вопросам</p>
+                                <p class="person-extra">📞 45-67-08</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/kazantsev.jpg" alt="Казанцев Владимир Юрьевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Казанцев Владимир Юрьевич</h4>
+                                <p class="person-role">Заместитель директора по эксплуатации спортивных сооружений</p>
+                                <p class="person-extra">📞 45-67-95</p>
+                            </div>
+                        </div>
+
+                                                <div class="person-card">
+                            <img src="images/management/rostova.jpg" alt="Ростова Серафима Анатольевна" class="person-img">
+                            <div class="person-info">
+                                <h4>Ростова Серафима Анатольевна</h4>
+                                <p class="person-role">Заместитель директора по финансово-экономическим вопросам – главный бухгалтер</p>
+                                <p class="person-extra">📞 45-67-15</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/kalashnikov.jpg" alt="Калашников Михаил Кириллович" class="person-img">
+                            <div class="person-info">
+                                <h4>Калашников Михаил Кириллович</h4>
+                                <p class="person-role">Главный инженер</p>
+                                <p class="person-extra">📞 45-97-91</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/trofimovich.jpg" alt="Трофимович Александра Игоревна" class="person-img">
+                            <div class="person-info">
+                                <h4>Трофимович Александра Игоревна</h4>
+                                <p class="person-role">Начальник отдела спортивной подготовки и учебно-методической работы</p>
+                                <p class="person-extra">📞 45-67-05</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/mandrikov.jpg" alt="Мандриков Дмитрий Геннадьевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Мандриков Дмитрий Геннадьевич</h4>
+                                <p class="person-role">Начальник службы дежурных и комплексной безопасности</p>
+                                <p class="person-extra">📞 45-67-93</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/agarkova.jpg" alt="Агаркова Дарья Дмитриевна" class="person-img">
+                            <div class="person-info">
+                                <h4>Агаркова Дарья Дмитриевна</h4>
+                                <p class="person-role">Начальник отдела реализации социальных программ, маркетинга и информационного обеспечения</p>
+                                <p class="person-extra">📞 45-67-94</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- СКАЛОЛАЗАНИЕ -->
+            <div class="sport-panel" id="sport-climbing">
+
+                <!-- ТРЕНЕРСКИЙ СОСТАВ -->
+                <div class="school-section">
+                    <h3 class="school-title">Тренерский состав</h3>
+                    <div class="school-scroll">
+
+                        <div class="person-card">
+                            <img src="images/coaches/smirnov.jpg" alt="Смирнов Андрей Валентинович" class="person-img">
+                            <div class="person-info">
+                                <h4>Смирнов Андрей Валентинович</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/coaches/evko.jpg" alt="Евко Юлия Александровна" class="person-img">
+                            <div class="person-info">
+                                <h4>Евко Юлия Александровна</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/coaches/malinina.jpg" alt="Малинина Наталья Анатольевна" class="person-img">
+                            <div class="person-info">
+                                <h4>Малинина Наталья Анатольевна</h4>
+                                <p class="person-role">Тренер-преподаватель</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="school-section">
+                    <h3 class="school-title">Руководство</h3>
+                    <div class="school-scroll">
+
+                        <div class="person-card">
+                            <img src="images/management/yurov.jpg" alt="Юров Константин Геннадьевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Юров Константин Геннадьевич</h4>
+                                <p class="person-role">Директор</p>
+                                <p class="person-extra">📞 45-67-91</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/golovenko.jpg" alt="Головенко Татьяна Ивановна" class="person-img">
+                            <div class="person-info">
+                                <h4>Головенко Татьяна Ивановна</h4>
+                                <p class="person-role">Заместитель директора по общим вопросам</p>
+                                <p class="person-extra">📞 45-67-08</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/kazantsev.jpg" alt="Казанцев Владимир Юрьевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Казанцев Владимир Юрьевич</h4>
+                                <p class="person-role">Заместитель директора по эксплуатации спортивных сооружений</p>
+                                <p class="person-extra">📞 45-67-95</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/rostova.jpg" alt="Ростова Серафима Анатольевна" class="person-img">
+                            <div class="person-info">
+                                <h4>Ростова Серафима Анатольевна</h4>
+                                <p class="person-role">Заместитель директора по финансово-экономическим вопросам – главный бухгалтер</p>
+                                <p class="person-extra">📞 45-67-15</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/kalashnikov.jpg" alt="Калашников Михаил Кириллович" class="person-img">
+                            <div class="person-info">
+                                <h4>Калашников Михаил Кириллович</h4>
+                                <p class="person-role">Главный инженер</p>
+                                <p class="person-extra">📞 45-97-91</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/trofimovich.jpg" alt="Трофимович Александра Игоревна" class="person-img">
+                            <div class="person-info">
+                                <h4>Трофимович Александра Игоревна</h4>
+                                <p class="person-role">Начальник отдела спортивной подготовки и учебно-методической работы</p>
+                                <p class="person-extra">📞 45-67-05</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/mandrikov.jpg" alt="Мандриков Дмитрий Геннадьевич" class="person-img">
+                            <div class="person-info">
+                                <h4>Мандриков Дмитрий Геннадьевич</h4>
+                                <p class="person-role">Начальник службы дежурных и комплексной безопасности</p>
+                                <p class="person-extra">📞 45-67-93</p>
+                            </div>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="images/management/agarkova.jpg" alt="Агаркова Дарья Дмитриевна" class="person-img">
+                            <div class="person-info">
+                                <h4>Агаркова Дарья Дмитриевна</h4>
+                                <p class="person-role">Начальник отдела реализации социальных программ, маркетинга и информационного обеспечения</p>
+                                <p class="person-extra">📞 45-67-94</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- =====================================================
-             ЭКРАН «ВАКАНСИИ»
-             ===================================================== -->
+        <!--ЭКРАН «ВАКАНСИИ»-->
         <div id="vacancies-screen" class="screen">
             <button class="back-btn" data-target="main-screen">← Назад</button>
             <h2>Вакансии</h2>
